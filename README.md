@@ -2,4 +2,4 @@
 # Configure local Apache James Server in local.
 # Configure Application with local James Server.
 # Useful  to create own host and create own Email server.
-# Use java,Ejb,JSF.
+# Use Java,EJB,JSF.
