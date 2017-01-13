@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"    
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Email Application</title>
+    </h:head>
+    <h:body>
+        <center>
+        <table  style="border-style: dashed"> 
+    	<h:form prependId="false">
+    			<tr>
+                            <td colspan="2" ><center> <h3>Send Email </h3></center>
+                                <hr></hr></td>
+    			</tr>
+                        <tr>
+    				<td>To:</td>
+    				<td>
+                                    <h:inputText size="50" id="recipient" required="true" value="#{emailmainBean.recipient}">
+                                        <f:validator validatorId="validatorOfData" />
+                                    </h:inputText>
+                                    <br/><h:message for="To" style="color:red" />
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>Subject:</td>
+                                <td><h:inputText size="50" id="mailsubject" value="#{emailmainBean.mailsubject}"></h:inputText></td>
+                                <a href="../src/java/ejb/ValidatorOfData.java"></a>
+    			</tr>
+    			<tr>
+    				<td>Message:</td>
+                                <td><h:inputTextarea cols="60" rows="6"  id ="emailcontant" value="#{emailmainBean.emailcontant}"></h:inputTextarea></td>
+    			</tr>    			    	
+    			<tr>
+    				<td></td>
+    				<td>
+                                    <h:commandButton value="Send"  action="#{emailmainBean.sendMail()}"></h:commandButton>
+    					<h:commandButton value="Cancel"  action="welcome" immediate="true"></h:commandButton>
+    				</td>
+    			</tr>    					
+    		
+    	</h:form>
+          </table></center>
+    </h:body>
+</html>
+
